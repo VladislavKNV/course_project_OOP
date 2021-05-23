@@ -1,0 +1,39 @@
+﻿<Window x:Class="course_project_v0._0._2.View.FeedbackWPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:course_project_v0._0._2.View"
+        mc:Ignorable="d"
+        Title="Banksy" Height="650" MinWidth="750" MinHeight="500" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF3E3E42">
+        
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="200" ></RowDefinition>
+                    <RowDefinition MinHeight="100" MaxHeight="150"></RowDefinition>
+                    <RowDefinition MinHeight="100" MaxHeight="120"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ListBox Margin="0 40 0 0" x:Name="ListBoxFeedbacks" Background="#FF3E3E42" Grid.Column="0" Grid.Row="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="60 0 0 0 ">
+                                <TextBlock Text="{Binding login}" Foreground="#DF65F7" FontSize="12"></TextBlock>
+                                <TextBlock Text="{Binding feedback}" FontSize="16" Foreground="White" TextWrapping="Wrap"></TextBlock>
+                                <TextBlock Text="{Binding dateFeedback}" FontSize="12" Foreground="Green"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <TextBox x:Name="Feedback_TextBox" Margin="60 10 60 0" Background='White' TextWrapping="Wrap"  TextChanged="RevTextBox_TextChanged"></TextBox>
+                </Grid>
+
+                <Grid Grid.Column="0" Grid.Row="2" Margin=" 60 0 60 0">
+                    <Button Content="Назад" HorizontalAlignment="Left" Height="60" Width="140" FontSize="14" Background="#b51f3d" BorderThickness="0" Click="Button_Click_Back"></Button>
+                    <Button x:Name="ButtonSave" Width="160" Content="Отправить" Height="60" Background="Green" HorizontalAlignment="Right" Click="Button_Click_Save"></Button>
+                </Grid>
+        </Grid>
+        
+    </Grid>
+</Window>

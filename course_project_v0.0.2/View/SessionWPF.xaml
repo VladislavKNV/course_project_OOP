@@ -1,0 +1,91 @@
+﻿<Window x:Class="course_project_v0._0._2.View.SessionWPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:course_project_v0._0._2.View"
+        mc:Ignorable="d"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Banksy" Height="550" Width="850" MinHeight="450" MinWidth="650" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF3E3E42">
+        <ScrollViewer>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="200" MaxHeight="950"></RowDefinition>
+                    <RowDefinition MinHeight="40" MaxHeight="240"></RowDefinition>
+                    <RowDefinition Height="140"></RowDefinition>
+                    <RowDefinition MinHeight="60" MaxHeight="240"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="200" MaxWidth="200"></ColumnDefinition>
+                    <ColumnDefinition Width="17*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ListBox  x:Name="ListBoxPoster"  Background="#FF3E3E42"  Grid.Column="0" Grid.Row="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding poster}" Height="220" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Grid.Column="1" Grid.Row="0" Margin="0 0 10 0">
+                    <TextBlock Margin="3 0 0 0" x:Name="FilmName" Foreground="White" FontSize="20" FontWeight="Bold"/>
+
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Год:</Label>
+                        <TextBlock Margin="33 0 0 0" VerticalAlignment="Center"  x:Name="FilmYear" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Жанры:</Label>
+                        <TextBlock  Margin="63 0 0 0"  VerticalAlignment="Center" x:Name="FilmGenres" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Рейтинг:</Label>
+                        <TextBlock  Margin="65 0 0 0"  VerticalAlignment="Center"  x:Name="FilmRating" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Страны:</Label>
+                        <TextBlock  Margin="65 0 0 0"  VerticalAlignment="Center" x:Name="FilmCountries" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Дата выхода:</Label>
+                        <TextBlock  Margin="95 0 0 0"  VerticalAlignment="Center" x:Name="FilmPremiereDate" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Продолжительность:</Label>
+                        <TextBlock  Margin="145 0 0 0"  VerticalAlignment="Center" x:Name="FilmDuration" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Режисёр:</Label>
+                        <TextBlock  Margin="70 0 0 0"  VerticalAlignment="Center" x:Name="FilmDirector" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid>
+                        <Label FontSize="13" Foreground="White" FontWeight="Bold" >Актёры:</Label>
+                        <TextBlock  Margin="65 0 0 0"  VerticalAlignment="Center" x:Name="FilmActros" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" >
+                    <Label Margin="10" FontSize="14" Foreground="White" FontWeight="Bold" >Описание:</Label>
+                    <TextBlock Margin="20 0 20 0" x:Name="FilmPlot" FontSize="13" Foreground="White" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" >
+                    <Button Margin=" 20 20 0 20" Content="Назад" HorizontalAlignment="Left" Height="40" Width="100" FontSize="14" Background="#b51f3d" BorderThickness="0" Click="Button_Click_Back"></Button>
+                </StackPanel>
+                <ListBox Margin="40 10 40 0" x:Name="ListBoxSession"  Background="#FF38373C"  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" SelectionChanged="ListBoxSession_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0 0 0 0 ">
+                                <TextBlock Text="{Binding filmName}" Foreground="White" FontSize="16"></TextBlock>
+                                <TextBlock Text="{Binding DateForInfo}" FontSize="14" Foreground="White"></TextBlock>
+                                <TextBlock Text="{Binding TimeForInfo}" FontSize="14" Foreground="White"></TextBlock>
+                                <TextBlock Text="{Binding Info_price}" FontSize="14" Foreground="White"></TextBlock>
+                                <TextBlock Text="{Binding Info_number_of_free_seats}" FontSize="14" Foreground="White"></TextBlock>
+                                <TextBlock Text="{Binding hall}" FontSize="14" Foreground="White"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>
