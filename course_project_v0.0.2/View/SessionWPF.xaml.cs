@@ -4,6 +4,7 @@ using course_project_v0._0._2.DataBase;
 using System.Windows;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using System.Text;
 
 namespace course_project_v0._0._2.View
 {
@@ -93,6 +94,20 @@ namespace course_project_v0._0._2.View
 		private ObservableCollection<AppViewSession> infoforsession;
 		public void InfoForListBox()
 		{
+			StringBuilder bild = new StringBuilder($"{DateTime.Now}");
+			Console.WriteLine(bild);
+			bild.Remove(0, 11);
+			bild.Remove(2, 6);
+			
+			StringBuilder bild2 = new StringBuilder($"{DateTime.Now}");
+			bild2.Remove(0, 14);
+			bild2.Remove(2, 3);
+
+			string strr1 = Convert.ToString(bild);
+			string strr2 = Convert.ToString(bild2);
+			int h = Convert.ToInt32(strr1);
+			int min = Convert.ToInt32(strr2);
+			TimeSpan timenow = new TimeSpan(h, min, 0);
 			using (SQL_course_work cw = new SQL_course_work())
 			{
 				var info = cw.Session.ToList();
@@ -101,12 +116,15 @@ namespace course_project_v0._0._2.View
 				{
 					if (i.date == DateSession && i.filmID == FilmID)
 					{
-						AppViewSession allSession = new AppViewSession();
-						var forBD = cw.Database.SqlQuery<Film>($"select * from film where Film.filmID = '{i.filmID}'");
-						foreach (var check in forBD)
+						if (timenow < i.time)
 						{
-							allSession.InfoForListBox(i.sessionID, i.filmID, i.date, i.time, i.hallID, i.number_of_free_seats, i.price_for_place, check.filmName, i.End_date, i.End_time);
-							infoforsession.Add(allSession);
+							AppViewSession allSession = new AppViewSession();
+							var forBD = cw.Database.SqlQuery<Film>($"select * from film where Film.filmID = '{i.filmID}'");
+							foreach (var check in forBD)
+							{
+								allSession.InfoForListBox(i.sessionID, i.filmID, i.date, i.time, i.hallID, i.number_of_free_seats, i.price_for_place, check.filmName, i.End_date, i.End_time);
+								infoforsession.Add(allSession);
+							}
 						}
 					}
 				}
