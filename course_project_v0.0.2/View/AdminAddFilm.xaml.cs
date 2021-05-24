@@ -790,6 +790,7 @@ namespace course_project_v0._0._2.View
 							bool timesession = true;
 							DateTime dateend = new DateTime(y3, m3, d3, 0, 0, 0);
 							TimeSpan duration2 = new TimeSpan(h3, min, 0);
+							TimeSpan duration3 = new TimeSpan(0, 0, 0);
 							var times = cw.Database.SqlQuery<Session>($"select * from Session");
 							foreach (var check in times)
 							{
@@ -797,7 +798,25 @@ namespace course_project_v0._0._2.View
 								{
 									if (duration > check.time && duration < check.End_time)
 									{
+										if (check.date != DataPickerSession.SelectedDate.Value)
+										{
+
+										}
 										if (duration > check.time || duration < check.End_time)
+										{
+											timesession = false;
+										}
+									}
+									if (check.End_date != DataPickerSession.SelectedDate.Value)
+									{
+										if (duration3 < check.End_time)
+										{
+											timesession = false;
+										}
+									}
+									else
+									{
+										if (duration > check.time && duration3 < check.End_time)
 										{
 											timesession = false;
 										}
