@@ -798,25 +798,7 @@ namespace course_project_v0._0._2.View
 								{
 									if (duration > check.time && duration < check.End_time)
 									{
-										if (check.date != DataPickerSession.SelectedDate.Value)
-										{
-
-										}
 										if (duration > check.time || duration < check.End_time)
-										{
-											timesession = false;
-										}
-									}
-									if (check.End_date != DataPickerSession.SelectedDate.Value)
-									{
-										if (duration3 < check.End_time)
-										{
-											timesession = false;
-										}
-									}
-									else
-									{
-										if (duration > check.time && duration3 < check.End_time)
 										{
 											timesession = false;
 										}
@@ -842,15 +824,15 @@ namespace course_project_v0._0._2.View
 								MessageBox.Show("Запись прошла успешно.");
 								InfoList();
 								SessionLabel.Content = null;
+								ComboBoxhour.SelectedIndex = -1;
+								ComboBoxMinuts.SelectedIndex = -1;
+								TextBoxPrice.Clear();
+								DataPickerSession.SelectedDate = null;
 							}
 							else
 								MessageBox.Show("В это время идет другой сеанс");
-
 						}
-						ComboBoxhour.SelectedIndex = -1;
-						ComboBoxMinuts.SelectedIndex = -1;
-						TextBoxPrice.Clear();
-						DataPickerSession.SelectedDate = null;
+						
 					}
 					else
 					{
