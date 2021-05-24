@@ -5,8 +5,6 @@ using course_project_v0._0._2.DataBase;
 using System.Windows.Controls;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
-using System.Net.Sockets;
-using System.IO;
 
 namespace course_project_v0._0._2.View
 {
@@ -34,7 +32,6 @@ namespace course_project_v0._0._2.View
 					{
 						Feedback feedback = new Feedback()
 						{
-							//
 							userID = USERid,
 							feedback1 = Feedback_TextBox.Text.Trim(),
 							login = LOGIN.Trim(),
@@ -42,14 +39,18 @@ namespace course_project_v0._0._2.View
 						};
 						cw.Feedback.Add(feedback);
 						cw.SaveChanges();
+						MessageBox.Show("Спасибо за отзыв.");
+					}
+					else
+					{
+						MessageBox.Show("Комментарий не может содержать более 3000 символов");
 					}
 				}
-				MessageBox.Show("Спасибо за отзыв.");
 				InfoForFeedback();
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Нет подключения к интернету");
+				MessageBox.Show("Ошибка. Комментарий не может содержать более 3000 символов");
 			}
 		}
 		private ObservableCollection<AppViewFeedback> infoforfeedback;
@@ -93,7 +94,7 @@ namespace course_project_v0._0._2.View
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Нет подключения к интернету");
+				MessageBox.Show("Ошибка");
 			}
 		}
 		private void RevTextBox_TextChanged(object sender, TextChangedEventArgs e)

@@ -47,7 +47,7 @@ namespace course_project_v0._0._2.View
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Нет подключения к интернету");
+				MessageBox.Show("Ошибка");
 			}
 		}
 		public void InfoForFilms()
@@ -128,7 +128,7 @@ namespace course_project_v0._0._2.View
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Нет подключения к интернету ");
+				MessageBox.Show("Ошибка ");
 			}
 			
 		}

@@ -21,6 +21,7 @@ namespace course_project_v0._0._2
 			{
 				Sing_Up sing_Up = new Sing_Up();
 				sing_Up.Show();
+				Hide();
 			}
 			catch(Exception)
 			{
@@ -29,8 +30,6 @@ namespace course_project_v0._0._2
 		}
 		private void Button_Click_Sing_In(object sender, RoutedEventArgs e)
 		{
-			//Hide();
-
 			if (loginbool == false)
 			{
 				LoginLabel.Content = "Неверный логин.";
@@ -52,13 +51,15 @@ namespace course_project_v0._0._2
 							{
 								try
 								{
+									Hide();
 									loginbool_for_sing_In = true;
 									MainWindow mainWindow = new MainWindow(check.admin, check.login);
 									mainWindow.Show();
+									//Close();
 								}
 								catch(Exception)
 								{
-									MessageBox.Show("Нет подключения к интернету");
+									MessageBox.Show("Ошибка");
 								}
 							}
 							else

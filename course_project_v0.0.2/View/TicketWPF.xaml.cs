@@ -546,7 +546,7 @@ namespace course_project_v0._0._2.View
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Нет подключения к интернету ");
+				MessageBox.Show("Ошибка ");
 			}
 		}
 		private void Button_Buy_Click(object sender, RoutedEventArgs e)
@@ -599,7 +599,7 @@ namespace course_project_v0._0._2.View
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Ошибка");
+				MessageBox.Show("Выбирете место");
 			}
 		}
 	}

@@ -20,25 +20,25 @@
                             <StackPanel Margin=" 30 0 40 0">
                                 <Label Foreground="White" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold">Добавление фильмов</Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmName" materialDesign:HintAssist.Hint="Название" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmNameTextBox_TextChanged" FontSize="14"/>
-                                <Label x:Name="FilmNameLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmNameLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmYear" materialDesign:HintAssist.Hint="Год" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmYearTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxNumbers_PreviewTextInput"/>
-                                <Label x:Name="FilmYearLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmYearLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmPlot" materialDesign:HintAssist.Hint="Описание" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmPlotTextBox_TextChanged" FontSize="14"/>
-                                <Label x:Name="FilmPlotLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmPlotLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmGenres" materialDesign:HintAssist.Hint="Жанры" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmGenresTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                <Label x:Name="FilmGenresLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmGenresLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmRating" materialDesign:HintAssist.Hint="Рейтинг" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmRatingTextBox_TextChanged" FontSize="14"/>
-                                <Label x:Name="FilmRatingLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmRatingLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmCountries" materialDesign:HintAssist.Hint="Страны" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmCountriesTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                <Label x:Name="FilmCountriesLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmCountriesLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmDirector" materialDesign:HintAssist.Hint="Режисёр" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmDirectorTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                <Label x:Name="FilmDirectorLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmDirectorLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmActors" materialDesign:HintAssist.Hint="Актёры" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmActorsTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                <Label x:Name="FilmActorsLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmActorsLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmDuration" materialDesign:HintAssist.Hint="Продолжительность" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmDurationTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxNumbers_PreviewTextInput"/>
-                                <Label x:Name="FilmDurationLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmDurationLabel" Foreground="#bababa"></Label>
                                 <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmPremiereDate" materialDesign:HintAssist.Hint="Дата выхода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="PremiereDateTextBox_TextChanged" FontSize="14"/>
-                                <Label x:Name="FilmPremiereDateLabel" Foreground="DarkRed"></Label>
+                                <Label x:Name="FilmPremiereDateLabel" Foreground="#bababa"></Label>
                                 <Grid Margin=" 0 20 0 20">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="150"></ColumnDefinition>
@@ -94,25 +94,25 @@
                             <ScrollViewer>
                                 <StackPanel >
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmName2" materialDesign:HintAssist.Hint="Название" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmNameTextBox_TextChanged" FontSize="14"/>
-                                    <Label x:Name="FilmNameLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmNameLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmYear2" materialDesign:HintAssist.Hint="Год" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmYearTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxNumbers_PreviewTextInput"/>
-                                    <Label x:Name="FilmYearLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmYearLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmPlot2" materialDesign:HintAssist.Hint="Описание" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmPlotTextBox_TextChanged" FontSize="14"/>
-                                    <Label x:Name="FilmPlotLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmPlotLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmGenres2" materialDesign:HintAssist.Hint="Жанры" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmGenresTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                    <Label x:Name="FilmGenresLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmGenresLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmRating2" materialDesign:HintAssist.Hint="Рейтинг" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmRatingTextBox_TextChanged" FontSize="14"/>
-                                    <Label x:Name="FilmRatingLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmRatingLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmCountries2" materialDesign:HintAssist.Hint="Страны" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmCountriesTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                    <Label x:Name="FilmCountriesLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmCountriesLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmDirector2" materialDesign:HintAssist.Hint="Режисёр" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmDirectorTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                    <Label x:Name="FilmDirectorLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmDirectorLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmActors2" materialDesign:HintAssist.Hint="Актёры" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmActorsTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxFilmLetters_PreviewTextInput"/>
-                                    <Label x:Name="FilmActorsLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmActorsLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmDuration2" materialDesign:HintAssist.Hint="Продолжительность" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="FilmDurationTextBox_TextChanged" FontSize="14" PreviewTextInput="TextBoxNumbers_PreviewTextInput"/>
-                                    <Label x:Name="FilmDurationLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmDurationLabel2" Foreground="#bababa"></Label>
                                     <TextBox Foreground="White" BorderBrush="White" x:Name="TextBoxFilmPremiereDate2" materialDesign:HintAssist.Hint="Дата выхода" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="PremiereDateTextBox_TextChanged" FontSize="14"/>
-                                    <Label x:Name="FilmPremiereDateLabel2" Foreground="DarkRed"></Label>
+                                    <Label x:Name="FilmPremiereDateLabel2" Foreground="#bababa"></Label>
                                     <Grid Margin="0 20 0 20">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="115"></ColumnDefinition>
@@ -123,7 +123,7 @@
                                         <Button Grid.Column="0" Content="Назад" HorizontalAlignment="Left" Height="40" Width="100" FontSize="14" Background="#b51f3d" BorderThickness="0" Click="Button_Click_Back"></Button>
                                         <Button Grid.Column="2" Content="Картинка" HorizontalAlignment="Left" Height="40" Width="100" FontSize="14" Background="#6d22ab" BorderThickness="0" Click="Button_Pict2"></Button>
                                         <Button Grid.Column="1" Content="Удалить" HorizontalAlignment="Left" Height="40" Width="100" FontSize="14" Background="#FF3E3E42" BorderThickness="0" Click="Button_Del_Click" ></Button>
-                                        <Button Grid.Column="3" Content="Сохранить" HorizontalAlignment="Left" Height="40" Width="115" FontSize="14" Background="Green" BorderThickness="0" Click="Button2_Save_Click" ></Button>
+                                        <Button Grid.Column="3" Content="Сохранить" HorizontalAlignment="Left" Height="40" Width="100" FontSize="14" Background="Green" BorderThickness="0" Click="Button2_Save_Click" ></Button>
                                     </Grid>
                                 </StackPanel>
                             </ScrollViewer>
@@ -172,9 +172,6 @@
                                 <StackPanel >
                                     <Label Foreground="White" FontSize="14">Логин:</Label>
                                     <TextBlock Margin="5 0 0 0" Foreground="White" x:Name="TextBoxLogin" FontSize="14"/>
-                                    <Label Foreground="White" FontSize="14">Пароль:</Label>
-                                    <TextBox  Margin="5 0 0 0" Foreground="White" BorderBrush="White" x:Name="TextBoxPassword" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="PasswordTextBox_TextChanged" FontSize="14"/>
-                                    <Label x:Name="PasswordLabel" Foreground="DarkRed"></Label>
                                     <Label Foreground="White" FontSize="14">E-mail:</Label>
                                     <TextBlock Margin="5 0 0 0" Foreground="White" x:Name="TextBoxEmail" FontSize="14"/>
                                     <ComboBox Margin="0 20 0 0" Name="ComboBoxAdmin" HorizontalAlignment="Left" Width="150" Background="White">
@@ -203,12 +200,40 @@
                     <Image Source="/ImageF\addses.png" Width="40" Height="40"></Image>
                 </TabItem.Header>
                 <TabItem.Content>
+                    
                     <Grid Margin="0 0 0 0">
-                        <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 20" Foreground="White" FontSize="16" FontWeight="Bold">Добавление сеансов</Label>
-                            <ComboBox x:Name="ComboBoxFilms" Width="350" HorizontalAlignment="Left" Background="White">
-                                <TextBlock Text="{Binding filmname}"></TextBlock>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Margin="5 0 5 0">
+                            <TextBox x:Name="TextBoxSearchFilm2" Background="White" Width="275" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"  TextChanged="SearchTextBox_TextChanged"></TextBox>
+                            <ComboBox Margin="280 0 0 0 " Name="ComboBoxFilm2" Width="100" Height="30" HorizontalAlignment="Left" Background="White" MouseLeave="ComboBoxFilm2_MouseLeave">
+                                <ComboBoxItem IsSelected="True">
+                                    <TextBlock>Название</TextBlock>
+                                </ComboBoxItem>
+                                <TextBlock>ID</TextBlock>
                             </ComboBox>
+                            <Label HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 35 0" Foreground="White" FontSize="16" FontWeight="Bold">Добавление сеансов</Label>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <ListBox HorizontalAlignment="Left" Width="280" x:Name="ListBoxFilms2"  Background="#FF3E3E42"  Grid.Column="0" SelectionChanged="ListBoxFilms_SelectionChanged">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image HorizontalAlignment="Right" Source="{Binding poster}" Width="60" Height="60"/>
+                                            <StackPanel Margin="5">
+                                                <TextBlock Text="{Binding filmname}" Foreground="White" FontSize="12"/>
+                                                <TextBlock Text="{Binding filmID}" FontSize="10" Foreground="White"/>
+                                                <TextBlock Text="{Binding year}" FontSize="10" Foreground="White"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                        <StackPanel Grid.Row="1" Margin="350 30 0 0"  VerticalAlignment="Top">
+
                             <DatePicker FontSize="18" Margin="0 10 0 0" x:Name="DataPickerSession" Foreground="White" Width="350" BorderBrush="White" HorizontalAlignment="Left" ></DatePicker>
                             <Grid Margin="0 30 0 0">
                                 <Grid.ColumnDefinitions>
@@ -261,8 +286,8 @@
                                 </ComboBox>
                             </Grid>
                             <TextBox Margin="0 20 0 0" Width="350" HorizontalAlignment="Left" x:Name="TextBoxPrice" Foreground="White" BorderBrush="White" materialDesign:HintAssist.Hint="Введите цену" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="PriceTextBox_TextChanged" FontSize="14"/>
-                            <Label x:Name="priceLabel" Foreground="DarkRed"></Label>
-                            <Label x:Name="SessionLabel" Foreground="DarkRed"></Label>
+                            <Label x:Name="priceLabel" Foreground="#bababa"></Label>
+                            <Label x:Name="SessionLabel" Foreground="#bababa"></Label>
                             <Grid Margin="0 20 0 0" Width="350" HorizontalAlignment="Left">
                                 <Button Margin=" 0 20 0 0" Content="Назад" HorizontalAlignment="Left" Height="40" Width="120" FontSize="14" Background="#b51f3d" BorderThickness="0" Click="Button_Click_Back"></Button>
                                 <Button Margin=" 0 20 0 0" Content="Сохранить" HorizontalAlignment="Right" Height="40" Width="150" FontSize="14" Background="Green" BorderThickness="0" Click="Button_SaveSession_Click" Grid.Column="1" ></Button>

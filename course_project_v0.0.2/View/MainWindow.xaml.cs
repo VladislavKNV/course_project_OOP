@@ -27,7 +27,7 @@ namespace course_project_v0._0._2
             InfoForListBox();
         }
         public bool ADMIN;
-        public string LOGIN;
+        public string LOGIN { get; set; }
         public void DateForPicker()
 		{
              Datepic.SelectedDate = DateTime.Now;
@@ -107,7 +107,7 @@ namespace course_project_v0._0._2
             }
             catch (Exception)
             {
-                MessageBox.Show("Нет подключения к интернету");
+                MessageBox.Show("Ошибка");
             }
         }
           
@@ -122,7 +122,7 @@ namespace course_project_v0._0._2
             }
             catch(Exception)
 			{
-                MessageBox.Show("Нет подключения к интернету");
+                MessageBox.Show("Ошибка");
 			}
             
         }
@@ -141,7 +141,7 @@ namespace course_project_v0._0._2
             }
             catch(Exception)
 			{
-                MessageBox.Show("Нет подключения к интернету ");
+                MessageBox.Show("Ошибка ");
 			}
            
         }
@@ -163,7 +163,7 @@ namespace course_project_v0._0._2
             }
 			catch
 			{
-                MessageBox.Show("Нет подключения к интернету");
+                MessageBox.Show("Ошибка");
 			}
           
 		}

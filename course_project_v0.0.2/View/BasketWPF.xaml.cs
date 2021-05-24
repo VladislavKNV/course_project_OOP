@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Windows;
 using course_project_v0._0._2.DataBase;
 
@@ -20,6 +16,7 @@ namespace course_project_v0._0._2.View
 			InfoForListBox();
 			LoginUser.Text = LOGIN;
 		}
+
 		private void Button_Click_Back(object sender, RoutedEventArgs e)
 		{
 			try
@@ -30,7 +27,7 @@ namespace course_project_v0._0._2.View
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Нет подключения к интернету");
+				MessageBox.Show("Ошибка");
 			}
 		}
 

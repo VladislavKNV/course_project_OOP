@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:course_project_v0._0._2"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Banksy"  Height="550" Width="750" MinHeight="500" MinWidth="600" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+        Title="Banksy"  Height="570" Width="750" MinHeight="570" MinWidth="600" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush >
             <GradientStop Color="#2d2d30" Offset="0"/>
@@ -18,14 +18,14 @@
         <StackPanel Margin="70 30 100 20">
             <TextBlock Text="Регистрация" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold"  TextDecorations="{x:Null}" />
             <TextBox x:Name="LoginTextBox" Foreground="White" BorderBrush="White" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="LoginTextBox_TextChanged" FontSize="22"/>
-            <Label x:Name="LoginLabel" Foreground="#6d22ab"> </Label>
+            <Label x:Name="LoginLabel" Foreground="#a500ab" FontWeight="Bold"> </Label>
             <TextBox x:Name="EmailTextBox" Foreground="White" BorderBrush="White" materialDesign:HintAssist.Hint="Введите E-mail" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="EmailTextBox_TextChanged" FontSize="22"/>
-            <Label  x:Name="EmailLabel" Foreground="#6d22ab"> </Label>
+            <Label  x:Name="EmailLabel" Foreground="#a500ab" FontWeight="Bold"> </Label>
             <PasswordBox x:Name="Pass1" Foreground="White" BorderBrush="White" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" PasswordChanged="pass1_PasswordChanged"  FontSize="22"></PasswordBox>
-            <Label x:Name="Pass1Label" Foreground="#6d22ab"></Label>
+            <Label x:Name="Pass1Label" Foreground="#a500ab" FontWeight="Bold"></Label>
             <PasswordBox x:Name="Pass2" Foreground="White" BorderBrush="White" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" PasswordChanged="pass2_PasswordChanged" FontSize="22"></PasswordBox>
-            <Label x:Name="Pass2Label"  Foreground="#6d22ab"> </Label>
-            <Grid Margin="0 30 0 0">
+            <Label x:Name="Pass2Label"  Foreground="#a500ab" FontWeight="Bold"> </Label>
+            <Grid Margin="0 30 0 10">
                 <Button Content="Назад" HorizontalAlignment="Left" Height="50" Width="150"  FontSize="18" Background="#6d22ab" Click="Button_Back_Click" BorderThickness="0" VerticalAlignment="Top"></Button>
                 <Button Content="Зарегистрироваться" HorizontalAlignment="Right" Height="50" Width="210"  FontSize="18"  Background="#b51f3d" BorderThickness="0" Click="Button_Reg_Click" ></Button>
             </Grid>

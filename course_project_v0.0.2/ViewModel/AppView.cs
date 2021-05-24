@@ -1,18 +1,11 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
-using course_project_v0._0._2.DataBase;
-using GalaSoft.MvvmLight;
-using System.IO;
-using System;
+﻿using GalaSoft.MvvmLight;
+
 
 namespace course_project_v0._0._2.View
 {
 	class AppView : ViewModelBase
     {
         public string filmID { get; set; }
-      //  public string FilmsID { get; set; }
         public string filmname { get; set; }
         public string year { get; set; }
         public byte[] poster { get; set; }
@@ -25,11 +18,6 @@ namespace course_project_v0._0._2.View
         public string duration { get; set; }
         public string premiereDate { get; set; }
 
-       // public void FilID(string _FilmsID)
-		//{
-          //  FilmsID = _FilmsID;
-
-        // }
         public void AddPoster(byte[] _poster)
         {
             poster = _poster;

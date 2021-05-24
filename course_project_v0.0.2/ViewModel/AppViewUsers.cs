@@ -1,12 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading;
-using System.Windows;
-using System.Windows.Input;
-using course_project_v0._0._2.DataBase;
-using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
 
 namespace course_project_v0._0._2.View
 {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using course_project_v0._0._2.View;
+﻿using System.Windows.Media;
 
 namespace course_project_v0._0._2
 {

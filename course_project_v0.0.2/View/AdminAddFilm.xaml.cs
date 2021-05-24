@@ -21,7 +21,6 @@ namespace course_project_v0._0._2.View
 			InitializeComponent();
 			InfoForUsers();
 			InfoForFilms();
-			InfoForComboBoxFilms();
 			InfoForSession();
 			InfoForListBoxTickets();
 			InfoForFeedback();
@@ -32,6 +31,8 @@ namespace course_project_v0._0._2.View
 		{
 			var view = CollectionViewSource.GetDefaultView(ListBoxFilms.ItemsSource);
 			view.Filter = FilmSearch;
+			var view2 = CollectionViewSource.GetDefaultView(ListBoxFilms2.ItemsSource);
+			view2.Filter = FilmSearch2;
 			var viewusers = CollectionViewSource.GetDefaultView(ListBoxUsers.ItemsSource);
 			viewusers.Filter = UsersSearch;
 			DataPickerSession.BlackoutDates.AddDatesInPast();
@@ -41,19 +42,6 @@ namespace course_project_v0._0._2.View
 			viewRev.Filter = RevSearchLogin;
 			var viewTicket = CollectionViewSource.GetDefaultView(ListBoxTickets.ItemsSource);
 			viewTicket.Filter = FilmNameSearch;
-		}
-		public void InfoForComboBoxFilms()
-		{
-			using (SQL_course_work cw = new SQL_course_work())
-			{
-
-				var info = cw.Film.ToList();
-
-				foreach (var i in info)
-				{
-					ComboBoxFilms.Items.Add(i.filmName);
-				}
-			}
 		}
 		private ObservableCollection<AppViewUsers> infoforusers;
 		public void InfoForUsers()
@@ -109,6 +97,7 @@ namespace course_project_v0._0._2.View
 					infoforfilms.Add(allFilms);
 				}
 				ListBoxFilms.ItemsSource = infoforfilms;
+				ListBoxFilms2.ItemsSource = infoforfilms;
 			}
 		}
 
@@ -245,7 +234,7 @@ namespace course_project_v0._0._2.View
 			}
 			catch(Exception)
 			{
-				MessageBox.Show("Нет подключения к интернету");
+				MessageBox.Show("Ошибка");
 			}
 		}
 		private void Button_Pict(object sender, RoutedEventArgs e)
@@ -375,6 +364,10 @@ namespace course_project_v0._0._2.View
 						}
 					}
 				}
+				if (contentListBox == null)
+				{
+					MessageBox.Show("Выбирите фильм из списка");
+				}
 				InfoForFilms();
 			}
 			catch(Exception)
@@ -389,16 +382,15 @@ namespace course_project_v0._0._2.View
 				var contentListBox = ListBoxUsers.SelectedItem as AppViewUsers;
 				if (contentListBox != null)
 				{
-					if (passbool == true)
+					if (contentListBox.login != LOGIN)
 					{
+
+
 						SQL_course_work context = new SQL_course_work();
 						var customer = context.UsersBD
 							.Where(c => c.login == contentListBox.login)
 							.FirstOrDefault();
-						if (contentListBox.password != TextBoxPassword.Text.Trim())
-						{
-							customer.password = GetHashPassword(TextBoxPassword.Text.Trim());
-						}
+
 
 						if (ComboBoxAdmin.SelectedItem == AdminComboBox)
 						{
@@ -408,16 +400,12 @@ namespace course_project_v0._0._2.View
 							customer.admin = false;
 
 						context.SaveChanges();
+
 					}
 					else
-					{
-						if (passbool == false)
-						{
-							PasswordLabel.Content = "Пароль должен содержать от 4 до 30 символов.";
-						}
-					}
+						MessageBox.Show("Вы не можете редактировать свои данные");
+					InfoForUsers();
 				}
-				InfoForUsers();
 			}
 			catch(Exception)
 			{
@@ -464,6 +452,17 @@ namespace course_project_v0._0._2.View
 							}
 
 						}
+						TextBoxFilmName2.Clear();
+						TextBoxFilmYear2.Clear();
+						TextBoxFilmPlot2.Clear();
+						TextBoxFilmGenres2.Clear();
+						TextBoxFilmRating2.Clear();
+						TextBoxFilmCountries2.Clear();
+						TextBoxFilmDirector2.Clear();
+						TextBoxFilmActors2.Clear();
+						TextBoxFilmDuration2.Clear();
+						TextBoxFilmPremiereDate2.Clear();
+						Pic = null;
 					}
 					SQL_course_work context = new SQL_course_work();
 					Film customer = context.Film
@@ -527,50 +526,60 @@ namespace course_project_v0._0._2.View
 				var contentListBox = ListBoxUsers.SelectedItem as AppViewUsers;
 				if (contentListBox != null)
 				{
-					int checked_value = Convert.ToInt32(contentListBox.UserID);
-					SQL_course_work contextTickets = new SQL_course_work();
-					Ticket customerTickets = contextTickets.Ticket
-						.Where(c => c.userID == checked_value)
-						.FirstOrDefault();
+					if (contentListBox.login != LOGIN)
+					{
+						int checked_value = Convert.ToInt32(contentListBox.UserID);
+						SQL_course_work contextTickets = new SQL_course_work();
+						Ticket customerTickets = contextTickets.Ticket
+							.Where(c => c.userID == checked_value)
+							.FirstOrDefault();
 
-				try
-				{
-					contextTickets.Ticket.Remove(customerTickets);
-					contextTickets.SaveChanges();
-				}
-				catch(Exception)
-				{
+						try
+						{
+							contextTickets.Ticket.Remove(customerTickets);
+							contextTickets.SaveChanges();
+						}
+						catch (Exception)
+						{
 
-				}
-					SQL_course_work contextFeedback = new SQL_course_work();
-					Feedback customerRew = contextFeedback.Feedback
-						.Where(c => c.userID == checked_value)
-						.FirstOrDefault();
+						}
+						SQL_course_work contextFeedback = new SQL_course_work();
+						Feedback customerRew = contextFeedback.Feedback
+							.Where(c => c.userID == checked_value)
+							.FirstOrDefault();
 
-				try
-				{
-					contextFeedback.Feedback.Remove(customerRew);
-					contextFeedback.SaveChanges();
-				}
-				catch(Exception)
-				{
+						try
+						{
+							contextFeedback.Feedback.Remove(customerRew);
+							contextFeedback.SaveChanges();
+						}
+						catch (Exception)
+						{
 
-				}
-					SQL_course_work context = new SQL_course_work();
-					UsersBD customer = context.UsersBD
-						.Where(c => c.login == contentListBox.login)
-						.FirstOrDefault();
+						}
+						SQL_course_work context = new SQL_course_work();
+						UsersBD customer = context.UsersBD
+							.Where(c => c.login == contentListBox.login)
+							.FirstOrDefault();
 
-					context.UsersBD.Remove(customer);
-					context.SaveChanges();
+						context.UsersBD.Remove(customer);
+						context.SaveChanges();
+					}
+					else
+					{
+						MessageBox.Show("Вы не можете удалить самого себя");
+					}
+					TextBoxLogin.Text = null;
+					TextBoxEmail.Text = null;
+					ComboBoxAdmin.SelectedIndex = -1;
+					check_free_seats();
+					InfoForSession();
+					InfoForUsers();
 				}
-				check_free_seats();
-				InfoForSession();
-				InfoForUsers();
 			}
 			catch(Exception)
 			{
-
+				
 			}
 		}
 		private void Button_DelFeedback_Click(object sender, RoutedEventArgs e)
@@ -625,197 +634,204 @@ namespace course_project_v0._0._2.View
 		{
 			try
 			{
-				if (pricebool == true)
+				var contentForListBox = ListBoxFilms2.SelectedItem as AppView;
+				if (contentForListBox != null)
 				{
-					using (SQL_course_work cw = new SQL_course_work())
+					if (pricebool == true)
 					{
-						int timefilm = 0;
-						var forenter = cw.Database.SqlQuery<Film>($"select * from Film");
-						foreach (var check in forenter)
+						using (SQL_course_work cw = new SQL_course_work())
 						{
-							if (check.filmName == ComboBoxFilms.Text)
+							int timefilm = 0;
+							var forenter = cw.Database.SqlQuery<Film>($"select * from Film");
+							foreach (var check in forenter)
 							{
-								FilmID = check.filmID;
-								timefilm = check.duration;
+								if (check.filmName == contentForListBox.filmname)
+								{
+									timefilm = check.duration;
+								}
 							}
-						}
-						var halls = cw.Database.SqlQuery<Hall>($"select * from Hall");
-						foreach (var check in halls)
-						{
-							if (check.hallID == 1)
+							var halls = cw.Database.SqlQuery<Hall>($"select * from Hall");
+							foreach (var check in halls)
 							{
-								nubrs_of_place = check.row * check.place;
+								if (check.hallID == 1)
+								{
+									nubrs_of_place = check.row * check.place;
+								}
 							}
-						}
-						int h = timefilm / 60; //часы фильма
-						int m = timefilm - (60 * h);//минуты фильма
-						int hour = Convert.ToInt32(ComboBoxhour.Text);//часы начала сеанса
-						int minuts = Convert.ToInt32(ComboBoxMinuts.Text);//минуты начаоа сеанса
-						TimeSpan duration = new TimeSpan(hour, minuts, 0);//начало сеанса
-						int min = minuts + m;//минуты фильма + сеанса для окончания сеанса
-						if (min > 60)
-						{
-							h++;//+ час к фильму
-							min -= 60;//минус час сеансу
-						}
-						StringBuilder d2 = new StringBuilder($"{DataPickerSession.SelectedDate.Value}");//день сеанса
-						d2.Remove(2, 16);
-						StringBuilder m2 = new StringBuilder($"{DataPickerSession.SelectedDate.Value}");//месяц сеанса
-						m2.Remove(5, 13);
-						m2.Remove(0, 3);
-						StringBuilder y2 = new StringBuilder($"{DataPickerSession.SelectedDate.Value}");//год сеанса
-						y2.Remove(10, 8);
-						y2.Remove(0, 6);
-						string strd2 = Convert.ToString(d2);
-						string strm2 = Convert.ToString(m2);
-						string stry2 = Convert.ToString(y2);
-						int d3 = Convert.ToInt32(strd2);
-						int m3 = Convert.ToInt32(strm2);
-						int y3 = Convert.ToInt32(stry2);
-						int h3 = hour + h;
-						if (h3 > 24)
-						{
-							d3++;
-							h3 -= 24;
-						}
+							int h = timefilm / 60; 
+							int m = timefilm - (60 * h);
+							int hour = Convert.ToInt32(ComboBoxhour.Text);
+							int minuts = Convert.ToInt32(ComboBoxMinuts.Text);
+							TimeSpan duration = new TimeSpan(hour, minuts, 0);
+							int min = minuts + m;
+							if (min > 60)
+							{
+								h++;
+								min -= 60;
+							}
+							StringBuilder d2 = new StringBuilder($"{DataPickerSession.SelectedDate.Value}");
+							d2.Remove(2, 16);
+							StringBuilder m2 = new StringBuilder($"{DataPickerSession.SelectedDate.Value}");
+							m2.Remove(5, 13);
+							m2.Remove(0, 3);
+							StringBuilder y2 = new StringBuilder($"{DataPickerSession.SelectedDate.Value}");
+							y2.Remove(10, 8);
+							y2.Remove(0, 6);
+							string strd2 = Convert.ToString(d2);
+							string strm2 = Convert.ToString(m2);
+							string stry2 = Convert.ToString(y2);
+							int d3 = Convert.ToInt32(strd2);
+							int m3 = Convert.ToInt32(strm2);
+							int y3 = Convert.ToInt32(stry2);
+							int h3 = hour + h;
+							if (h3 > 24)
+							{
+								d3++;
+								h3 -= 24;
+							}
 
-						switch (m3)
-						{
-							case 1:
-								if (d3 > 31)
-								{
-									m3++;
-									d3 -= 31;
-								}
-								break;
-							case 2:
-								if (d3 > 28)
-								{
-									m3++;
-									d3 -= 28;
-								}
-								break;
-							case 3:
-								if (d3 > 31)
-								{
-									m3++;
-									d3 -= 31;
-								}
-								break;
-							case 4:
-								if (d3 > 30)
-								{
-									m3++;
-									d3 -= 30;
-								}
-								break;
-							case 5:
-								if (d3 > 31)
-								{
-									m3++;
-									d3 -= 31;
-								}
-								break;
-							case 6:
-								if (d3 > 30)
-								{
-									m3++;
-									d3 -= 30;
-								}
-								break;
-							case 7:
-								if (d3 > 31)
-								{
-									m3++;
-									d3 -= 31;
-								}
-								break;
-							case 8:
-								if (d3 > 31)
-								{
-									m3++;
-									d3 -= 31;
-								}
-								break;
-							case 9:
-								if (d3 > 30)
-								{
-									m3++;
-									d3 -= 30;
-								}
-								break;
-							case 10:
-								if (d3 > 31)
-								{
-									m3++;
-									d3 -= 31;
-								}
-								break;
-							case 11:
-								if (d3 > 30)
-								{
-									m3++;
-									d3 -= 30;
-								}
-								break;
-							case 12:
-								if (d3 > 31)
-								{
-									m3++;
-									d3 -= 31;
-								}
-								break;
-						}
-						if (m3 > 12)
-						{
-							y3++;
-							m3 -= 12;
-						}
-						bool timesession = true;
-						DateTime dateend = new DateTime(y3, m3, d3, 0, 0, 0); // год - месяц - день - час - минута - секунда*/
-						TimeSpan duration2 = new TimeSpan(h3,min, 0);
-						var times = cw.Database.SqlQuery<Session>($"select * from Session");
-						foreach (var check in times)
-						{
-							if (check.date == DataPickerSession.SelectedDate.Value)
+							switch (m3)
 							{
-								if (duration > check.time && duration < check.End_time)
-								{
-									if (duration > check.time || duration < check.End_time)
+								case 1:
+									if (d3 > 31)
 									{
-										timesession = false;
+										m3++;
+										d3 -= 31;
+									}
+									break;
+								case 2:
+									if (d3 > 28)
+									{
+										m3++;
+										d3 -= 28;
+									}
+									break;
+								case 3:
+									if (d3 > 31)
+									{
+										m3++;
+										d3 -= 31;
+									}
+									break;
+								case 4:
+									if (d3 > 30)
+									{
+										m3++;
+										d3 -= 30;
+									}
+									break;
+								case 5:
+									if (d3 > 31)
+									{
+										m3++;
+										d3 -= 31;
+									}
+									break;
+								case 6:
+									if (d3 > 30)
+									{
+										m3++;
+										d3 -= 30;
+									}
+									break;
+								case 7:
+									if (d3 > 31)
+									{
+										m3++;
+										d3 -= 31;
+									}
+									break;
+								case 8:
+									if (d3 > 31)
+									{
+										m3++;
+										d3 -= 31;
+									}
+									break;
+								case 9:
+									if (d3 > 30)
+									{
+										m3++;
+										d3 -= 30;
+									}
+									break;
+								case 10:
+									if (d3 > 31)
+									{
+										m3++;
+										d3 -= 31;
+									}
+									break;
+								case 11:
+									if (d3 > 30)
+									{
+										m3++;
+										d3 -= 30;
+									}
+									break;
+								case 12:
+									if (d3 > 31)
+									{
+										m3++;
+										d3 -= 31;
+									}
+									break;
+							}
+							if (m3 > 12)
+							{
+								y3++;
+								m3 -= 12;
+							}
+							bool timesession = true;
+							DateTime dateend = new DateTime(y3, m3, d3, 0, 0, 0);
+							TimeSpan duration2 = new TimeSpan(h3, min, 0);
+							var times = cw.Database.SqlQuery<Session>($"select * from Session");
+							foreach (var check in times)
+							{
+								if (check.date == DataPickerSession.SelectedDate.Value)
+								{
+									if (duration > check.time && duration < check.End_time)
+									{
+										if (duration > check.time || duration < check.End_time)
+										{
+											timesession = false;
+										}
 									}
 								}
 							}
-						}
-						if (timesession == true)
-						{
-							Session session = new Session()
+							if (timesession == true)
 							{
-								filmID = FilmID,
-								hallID = 1,
-								date = DataPickerSession.SelectedDate.Value,
-								time = duration,
-								End_time = duration2,
-								End_date = dateend,
-								number_of_free_seats = nubrs_of_place,
-								price_for_place = Convert.ToInt32(TextBoxPrice.Text.Trim())
+								Session session = new Session()
+								{
+									filmID = Convert.ToInt32(contentForListBox.filmID),
+									hallID = 1,
+									date = DataPickerSession.SelectedDate.Value,
+									time = duration,
+									End_time = duration2,
+									End_date = dateend,
+									number_of_free_seats = nubrs_of_place,
+									price_for_place = Convert.ToInt32(TextBoxPrice.Text.Trim())
 
-							};
-							cw.Session.Add(session);
-							cw.SaveChanges();
-							MessageBox.Show("Запись прошла успешно.");
-							InfoForSession();
-							SessionLabel.Content = null;
+								};
+								cw.Session.Add(session);
+								cw.SaveChanges();
+								MessageBox.Show("Запись прошла успешно.");
+								InfoForSession();
+								SessionLabel.Content = null;
+							}
+							else
+								MessageBox.Show("В это время идет другой сеанс");
+
 						}
-						else
-							MessageBox.Show("В это время идет другой сеанс");
+						ComboBoxhour.SelectedIndex = -1;
+						ComboBoxMinuts.SelectedItem = -1;
+						TextBoxPrice.Clear();
+						DataPickerSession.SelectedDate = null;
 					}
-					
-				}
-				else
-				{
-					priceLabel.Content = "Цена должна быть от 1 до 100";
+					else
+					{
+						priceLabel.Content = "Цена должна быть от 1 до 100";
+					}
 				}
 			}
 			catch(Exception)
@@ -847,7 +863,6 @@ namespace course_project_v0._0._2.View
 			if (contentListBox != null)
 			{
 				TextBoxLogin.Text = contentListBox.login;
-				TextBoxPassword.Text = contentListBox.password;
 				TextBoxEmail.Text = contentListBox.Email;
 				if (contentListBox.admin == true)
 				{
@@ -899,7 +914,7 @@ namespace course_project_v0._0._2.View
 				try
 				{
 					int year = Convert.ToInt32(TextBoxFilmYear.Text.Trim());
-					DateTime date1 = new DateTime(year, 1, 1, 0, 0, 0); // год - месяц - день - час - минута - секунда
+					DateTime date1 = new DateTime(year, 1, 1, 0, 0, 0);
 					DateTime date2 = new DateTime(1896, 1, 1, 0, 0, 0);
 					if (date1 < date2 || date1 > DateTime.Now)
 					{
@@ -1282,21 +1297,6 @@ namespace course_project_v0._0._2.View
 				premieredatebool2 = false;
 			}
 		}
-		private void PasswordTextBox_TextChanged(object sender, TextChangedEventArgs e)
-		{
-			string pattern = @"\b\w{4,60}\b";
-			if (Regex.IsMatch(TextBoxPassword.Text, pattern, RegexOptions.IgnoreCase))
-			{
-				TextBoxPassword.BorderBrush = Brushes.LimeGreen;
-				PasswordLabel.Content = null;
-				passbool = true;
-			}
-			else
-			{
-				TextBoxPassword.BorderBrush = Brushes.DarkRed;
-				passbool = false;
-			}
-		}
 		private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			CollectionViewSource.GetDefaultView(ListBoxFilms.ItemsSource).Refresh();
@@ -1387,7 +1387,6 @@ namespace course_project_v0._0._2.View
 		public bool actorsbool2 = false;
 		public bool durationbool2 = false;
 		public bool premieredatebool2 = false;
-		public bool passbool = false;
 		public bool pricebool = false;
 		public int FilmID;
 		public int SessionID;
@@ -1412,6 +1411,24 @@ namespace course_project_v0._0._2.View
 			else
 			{
 				return (item as AppView).filmID.ToUpper().Contains(TextBoxSearch.Text.ToUpper());
+			}
+		}
+		private bool FilmSearch2(object item)
+		{
+			if (String.IsNullOrEmpty(TextBoxSearchFilm2.Text))
+				return true;
+			else
+			{
+				return (item as AppView).filmname.ToUpper().Contains(TextBoxSearchFilm2.Text.ToUpper());
+			}
+		}
+		private bool FilmSearchID2(object item)
+		{
+			if (String.IsNullOrEmpty(TextBoxSearchFilm2.Text))
+				return true;
+			else
+			{
+				return (item as AppView).filmID.ToUpper().Contains(TextBoxSearchFilm2.Text.ToUpper());
 			}
 		}
 		private bool UsersSearch(object item)
@@ -1560,6 +1577,19 @@ namespace course_project_v0._0._2.View
 			{
 				var view = CollectionViewSource.GetDefaultView(ListBoxFilms.ItemsSource);
 				view.Filter = FilmSearchID;
+			}
+		}
+		private void ComboBoxFilm2_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+		{
+			if (ComboBoxFilm2.SelectedIndex == 0)
+			{
+				var view = CollectionViewSource.GetDefaultView(ListBoxFilms.ItemsSource);
+				view.Filter = FilmSearch2;
+			}
+			if (ComboBoxFilm2.SelectedIndex == 1)
+			{
+				var view = CollectionViewSource.GetDefaultView(ListBoxFilms.ItemsSource);
+				view.Filter = FilmSearchID2;
 			}
 		}
 
