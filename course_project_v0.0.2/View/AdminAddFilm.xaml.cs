@@ -162,7 +162,7 @@ namespace course_project_v0._0._2.View
 						cw.SaveChanges();
 					}
 					MessageBox.Show("Запись прошла успешно.");
-					InfoForFilms();
+					InfoList();
 					TextBoxFilmName.Clear();
 					TextBoxFilmYear.Clear();
 					TextBoxFilmPlot.Clear();
@@ -368,7 +368,7 @@ namespace course_project_v0._0._2.View
 				{
 					MessageBox.Show("Выбирите фильм из списка");
 				}
-				InfoForFilms();
+				InfoList();
 			}
 			catch(Exception)
 			{
@@ -404,7 +404,7 @@ namespace course_project_v0._0._2.View
 					}
 					else
 						MessageBox.Show("Вы не можете редактировать свои данные");
-					InfoForUsers();
+					InfoList();
 				}
 			}
 			catch(Exception)
@@ -472,7 +472,7 @@ namespace course_project_v0._0._2.View
 					context.Film.Remove(customer);
 					context.SaveChanges();
 				}
-				InfoForFilms();
+				InfoList();
 			}
 			catch(Exception)
 			{
@@ -510,8 +510,7 @@ namespace course_project_v0._0._2.View
 						context.SaveChanges();
 					}
 				}
-				InfoForSession();
-				
+				InfoList();
 			}
 			catch(Exception)
 			{
@@ -573,14 +572,21 @@ namespace course_project_v0._0._2.View
 					TextBoxEmail.Text = null;
 					ComboBoxAdmin.SelectedIndex = -1;
 					check_free_seats();
-					InfoForSession();
-					InfoForUsers();
+					InfoList();
 				}
 			}
 			catch(Exception)
 			{
 				
 			}
+		}
+		public void InfoList()
+		{
+			InfoForUsers();
+			InfoForFilms();
+			InfoForSession();
+			InfoForListBoxTickets();
+			InfoForFeedback();
 		}
 		private void Button_DelFeedback_Click(object sender, RoutedEventArgs e)
 		{
@@ -598,7 +604,7 @@ namespace course_project_v0._0._2.View
 					context.Feedback.Remove(customer);
 					context.SaveChanges();
 				}
-				InfoForFeedback();
+				InfoList();
 			}
 			catch(Exception)
 			{
@@ -622,8 +628,7 @@ namespace course_project_v0._0._2.View
 					context.SaveChanges();
 				}
 				check_free_seats();
-				InfoForSession();
-				InfoForListBoxTickets();
+				InfoList();
 			}
 			catch(Exception)
 			{
@@ -816,7 +821,7 @@ namespace course_project_v0._0._2.View
 								cw.Session.Add(session);
 								cw.SaveChanges();
 								MessageBox.Show("Запись прошла успешно.");
-								InfoForSession();
+								InfoList();
 								SessionLabel.Content = null;
 							}
 							else
@@ -824,7 +829,7 @@ namespace course_project_v0._0._2.View
 
 						}
 						ComboBoxhour.SelectedIndex = -1;
-						ComboBoxMinuts.SelectedItem = -1;
+						ComboBoxMinuts.SelectedIndex = -1;
 						TextBoxPrice.Clear();
 						DataPickerSession.SelectedDate = null;
 					}
@@ -1781,29 +1786,27 @@ namespace course_project_v0._0._2.View
 		{
 			using (SQL_course_work cw = new SQL_course_work())
 			{
-				int seats = 0;
 				var forBD = cw.Database.SqlQuery<Session>($"select * from Session");
 				foreach (var check in forBD)
 				{
+					int s = 90;
 					var fortic = cw.Database.SqlQuery<Ticket>($"select * from Ticket where Ticket.sessionID = '{check.sessionID}'");
 					foreach (var i in fortic)
 					{
 						if (i.sessionID == check.sessionID)
 						{
-							seats++;
+							s--;
 						}
+						SQL_course_work context = new SQL_course_work();
+						var customer = context.Session
+							.Where(c => c.sessionID == i.sessionID)
+							.FirstOrDefault();
+
+						customer.number_of_free_seats = (s);
+						context.SaveChanges();
 					}
-
-					SQL_course_work context = new SQL_course_work();
-					var customer = context.Session
-						.Where(c => c.sessionID == check.sessionID)
-						.FirstOrDefault();
-
-					customer.number_of_free_seats = (90 - seats);
-					context.SaveChanges();
 				}
 			}
 		}
-
 	}
 }

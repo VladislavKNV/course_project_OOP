@@ -169,28 +169,27 @@ namespace course_project_v0._0._2
 		{
             using (SQL_course_work cw = new SQL_course_work())
             {
-                int seats = 0;
                 var forBD = cw.Database.SqlQuery<Session>($"select * from Session");
                 foreach (var check in forBD)
                 {
+                    int s = 90;
                     var fortic = cw.Database.SqlQuery<Ticket>($"select * from Ticket where Ticket.sessionID = '{check.sessionID}'");
                     foreach (var i in fortic)
                     {
-						if (i.sessionID == check.sessionID)
-						{
-                            seats++;
-						}
-                    }
+                        if (i.sessionID == check.sessionID)
+                        {
+                            s--;
+                        }
+                        SQL_course_work context = new SQL_course_work();
+                        var customer = context.Session
+                            .Where(c => c.sessionID == i.sessionID)
+                            .FirstOrDefault();
 
-                    SQL_course_work context = new SQL_course_work();
-                    var customer = context.Session
-                        .Where(c => c.sessionID == check.sessionID)
-                        .FirstOrDefault();
-                   
-                        customer.number_of_free_seats = (90 - seats);
-                    context.SaveChanges();
+                        customer.number_of_free_seats = (s);
+                        context.SaveChanges();
+                    }
                 }
             }
-         }
+        }
     }
 }

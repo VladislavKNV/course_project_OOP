@@ -94,20 +94,41 @@ namespace course_project_v0._0._2.View
 		private ObservableCollection<AppViewSession> infoforsession;
 		public void InfoForListBox()
 		{
-			StringBuilder bild = new StringBuilder($"{DateTime.Now}");
-			Console.WriteLine(bild);
-			bild.Remove(0, 11);
-			bild.Remove(2, 6);
-			
-			StringBuilder bild2 = new StringBuilder($"{DateTime.Now}");
-			bild2.Remove(0, 14);
-			bild2.Remove(2, 3);
+			TimeSpan timenow = new TimeSpan(0, 0, 0);
+			try
+			{
+				StringBuilder bild = new StringBuilder($"{DateTime.Now}");
+				Console.WriteLine(bild);
+				bild.Remove(0, 11);
+				bild.Remove(2, 6);
 
-			string strr1 = Convert.ToString(bild);
-			string strr2 = Convert.ToString(bild2);
-			int h = Convert.ToInt32(strr1);
-			int min = Convert.ToInt32(strr2);
-			TimeSpan timenow = new TimeSpan(h, min, 0);
+				StringBuilder bild2 = new StringBuilder($"{DateTime.Now}");
+				bild2.Remove(0, 14);
+				bild2.Remove(2, 3);
+
+				string strr1 = Convert.ToString(bild);
+				string strr2 = Convert.ToString(bild2);
+				int h = Convert.ToInt32(strr1);
+				int min = Convert.ToInt32(strr2);
+				timenow = new TimeSpan(h, min, 0);
+			}
+			catch(Exception)
+			{
+				StringBuilder bild = new StringBuilder($"{DateTime.Now}");
+				Console.WriteLine(bild);
+				bild.Remove(0, 11);
+				bild.Remove(1, 6);
+
+				StringBuilder bild2 = new StringBuilder($"{DateTime.Now}");
+				bild2.Remove(0, 13);
+				bild2.Remove(2, 3);
+
+				string strr1 = Convert.ToString(bild);
+				string strr2 = Convert.ToString(bild2);
+				int h = Convert.ToInt32(strr1);
+				int min = Convert.ToInt32(strr2);
+				timenow = new TimeSpan(h, min, 0);
+			}
 			using (SQL_course_work cw = new SQL_course_work())
 			{
 				var info = cw.Session.ToList();
