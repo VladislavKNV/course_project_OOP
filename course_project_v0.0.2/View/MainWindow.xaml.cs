@@ -5,9 +5,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using course_project_v0._0._2.DataBase;
-using System.Net.Sockets;
-using System.IO;
-using System.Text.RegularExpressions;
 
 namespace course_project_v0._0._2
 {

@@ -1715,7 +1715,7 @@ namespace course_project_v0._0._2.View
 								   select t;
 
 					infoforsession = new ObservableCollection<AppViewSession>();
-					foreach (var i in revi)
+					foreach (var i in sortrevi)
 					{
 						var forBD = cw.Database.SqlQuery<Film>($"select * from film where Film.filmID = '{i.filmID}'");
 						foreach (var item in forBD)
