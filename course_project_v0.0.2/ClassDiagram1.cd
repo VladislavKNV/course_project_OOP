@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="course_project_v0._0._2.App" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.Singleton" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAEAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Singleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAEAAAAEABAAAAAAAkAAAAoAQAAAEAAEAAAgAA=</HashCode>
+      <FileName>View\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.Sing_In" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQEAAAAAAAAAAAAAAAAAEAEAAAASAAEACAAAAA=</HashCode>
+      <FileName>View\Sing_In.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.Sing_Up" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAgACCAAAAAEAAAAAAAAAAEAAABQAgEAAAAAAA=</HashCode>
+      <FileName>View\Sing_Up.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.SQL_course_work" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAIAAAAQACAAACAAAAEAAABAAAAAAAEAAAAAA=</HashCode>
+      <FileName>DataBase\BD.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.Feedback" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAICCAAIAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>DataBase\Feedback.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.Film" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAIAAAAQAQAAAIAAAgACAQEABAACQBAAAAAAAAA=</HashCode>
+      <FileName>DataBase\Film.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.Hall" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAQAAAAAAAAACAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataBase\Hall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.Session" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAIAAABAACAAgQAAAAAAAABAACAAAAAQgQAAA=</HashCode>
+      <FileName>DataBase\Session.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.sysdiagrams" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataBase\sysdiagrams.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.Ticket" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAIAAAAAEQAACAgAAAACAAAAQAAAQAAAAQAAAAA=</HashCode>
+      <FileName>DataBase\Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.DataBase.UsersBD" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACCAACAAAAAAECAAAAAAAAAgAAEAA=</HashCode>
+      <FileName>DataBase\UsersBD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.Properties.Resources" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.View.AdminAddFilm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>mQEToRIwBIUCFKDklYAiKIkoMeAthYBAQaIFAnBs2JA=</HashCode>
+      <FileName>View\AdminAddFilm.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.View.BasketWPF" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAECAAgAAAAAAAAAAAAQAAAEAAAAAAAAA=</HashCode>
+      <FileName>View\BasketWPF.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.View.FeedbackWPF" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAEAAAiAIAAAAABAAAgQAAAIAAAAAAAAA=</HashCode>
+      <FileName>View\FeedbackWPF.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.View.SessionWPF" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAABAABAQCkAAAgAIACQCAAAAAEQkAAEQEAhAAAAE=</HashCode>
+      <FileName>View\SessionWPF.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.View.TicketWPF" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAkAAAgACAAQAgBQAAAAAACAEAAEAAEAQ=</HashCode>
+      <FileName>View\TicketWPF.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="course_project_v0._0._2.View.AppView" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEAEIAAAAQAAAAAIAAAgACAQEABIACBBAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\AppView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.View.AppViewFeedback" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAoCAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ViewModel\AppViewFeedback.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.View.AppViewSession" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAQAAAAACAAAAgAIAAAAAAAAAAKUEAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\AppViewSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.View.AppViewTickets" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAhAAAAAAAAAAAAAAAAAAgIAAAAAgABAFAAAEAQAQA=</HashCode>
+      <FileName>ViewModel\AppViewTickets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="course_project_v0._0._2.View.AppViewUsers" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAgAAAEAAAAgAAAAAgAAEAA=</HashCode>
+      <FileName>ViewModel\AppViewUsers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
